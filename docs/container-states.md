@@ -18,4 +18,16 @@ Here are some of the known limitations of the Terraform Runner and the communica
 
 ## Proposal
 
+> [scratch ideas..]
+>
+> - Orchestrate a lot of little pods for the different tasks. For example, after the `terraform init` pod runs, it exits and the next pod can start.
+> <br/>
+> In this scenario, the controller is not only aware of the run's status, it can also customize the next pod. (Not sure what for yet, but that sounds like it'd be kind of cool for something.)
+>
+> - Add multiple containers in a pod with pauses that wait for a trigger to activate. This is somewhat similar to the pod-per-task, but it's all contained in a single pod. 
+> <br/>
+> The controller can check the exit status of the last finished pod to know where in the run the pod is.
+
+<!-- First and foremost the Terraform Runner should be as simple as possible. Much of the logic should be handled by the controller where possible. Some concepts are easy to understand, like letting the controller handle saving outputs to a ConfigMap.  -->
+
 Still working on this... it's late and I need to get to sleep. :tired_face:
